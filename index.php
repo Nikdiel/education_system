@@ -44,37 +44,8 @@ $result = $connection->query($sql);
     </div>
 
     <div class="students-list">
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Имя</th>
-                    <th>Фамилия</th>
-                    <th>Возраст</th>
-                    <th>Группа</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        echo "
-                        <tr>
-                            <td>" . htmlspecialchars($row['id']) . "</td>
-                            <td>" . htmlspecialchars($row['first_name']) . "</td>
-                            <td>" . htmlspecialchars($row['last_name']) . "</td>
-                            <td>" . htmlspecialchars($row['age']) . "</td>
-                            <td>" . htmlspecialchars($row['group']) . "</td>
-                        </tr>";
-                    }
-                } else {
-                    echo "<tr><td colspan='5'>Нет студентов в базе данных.</td></tr>";
-                }
-                ?>
-            </tbody>
-        </table>
-    </div>
-</div>
+       
+          
 
 
 <script src="app.js"></script>
