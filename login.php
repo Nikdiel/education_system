@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вход в систему</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
     <h1>Вход в систему</h1>
@@ -21,6 +21,7 @@
         <input type="password" id="password" name="password" required><br><br>
 
         <button type="submit">Войти</button>
+        <a href="registr.php">Зарегестрироваться</a>
     </form>
 </body>
 </html>

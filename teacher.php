@@ -28,7 +28,7 @@ if (isset($_SESSION['logged-in'])) {
     $row_id = $result_id->fetch_assoc();
 
 
-    $sql = 'SELECT name FROM users WHERE id=?';
+    $sql = 'SELECT * FROM users WHERE id=?';
     $stmt = $connection->prepare($sql);
     $stmt->bind_param('i', $row_id['id']);
     $stmt->execute();
@@ -62,27 +62,8 @@ $connection->close();
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-    <h1><?php echo $translations['title'] ." <p>Преподаватель: " . $row['name'] . " </p>"?></h1>
-        <nav>
-            <a href="teacher.php"><?php echo $translations['add_student']; ?></a>
-            <a href="teacher.php#viewSchedule"><?php echo $translations['view_schedule']; ?></a>
-            <a href="teacher.php#viewGrades"><?php echo $translations['view_grades']; ?></a>
-            <a href="logout.php"><?php echo $translations['logout']; ?></a>
-            
-            <a href="">
-                <ul class="lang">
-                    <li>
-                        <?php echo 'Язык: ' . $lang; ?>
-                        <ul>
-                        <a href="?lang=ru"><li>Русский</li></a>
-                        <a href="?lang=kk"><li>Казахский</li></a>
-                        </ul>
-                    </li>
-                </ul>
-            </a>
-        </nav>
-    </header>
+    
+    <?php include "header.php"?>
 
     <main>
         <section id="addStudent">
@@ -117,9 +98,7 @@ $connection->close();
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 <?php echo $translations['title']; ?></p>
-    </footer>
+    <?php include "footer.html"?>
 
     <script src="app.js"></script>
 </body>

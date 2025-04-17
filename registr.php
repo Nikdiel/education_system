@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Регистрация</title>
-    <link rel="stylesheet" href="css/.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
     <h1>Регистрация</h1>
@@ -26,13 +26,14 @@
 
         <label for="role">Роль:</label><br>
         <div class="role">
-            <label for=""><input type="radio" id="student" name="role" value="student">Студент</label><br>
-            <label for=""><input type="radio" id="teacher" name="role" value="teacher">Учитель</label><br><br>
+            <label for=""><input type="radio" id="student" name="role" value="Студент">Студент</label><br>
+            <label for=""><input type="radio" id="teacher" name="role" value="Преподаватель">Учитель</label><br><br>
         </div>
         
         
 
-        <button type="submit">Войти</button>
+        <button type="submit">Зарегестрироваться</button>
+        <a href="login.php">Назад</a>
     </form>
 </body>
 </html>

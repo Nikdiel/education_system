@@ -27,12 +27,12 @@
                 $_SESSION['users'] = $user;
                 $_SESSION['role'] = $role;
 
-                if($role == 'student'){
+                if($role == 'Студент'){
                     unset($_SESSION['loginError']);
                     header('Location: student.php');
                 }
                 
-                if($role =='teacher'){
+                if($role =='Преподаватель'){
                     unset($_SESSION['loginError']);
                     header('Location: teacher.php');
                 }

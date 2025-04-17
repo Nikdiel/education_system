@@ -28,7 +28,7 @@ if (isset($_SESSION['logged-in'])) {
     $row_id = $result_id->fetch_assoc();
 
 
-    $sql = 'SELECT name FROM users WHERE id=?';
+    $sql = 'SELECT * FROM users WHERE id=?';
     $stmt = $connection->prepare($sql);
     $stmt->bind_param('i', $row_id['id']);
     $stmt->execute();
@@ -54,7 +54,7 @@ $connection->close();
 <?php include 'lang.php'; ?>
 
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="<?=$lang?>">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,26 +62,7 @@ $connection->close();
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1><?php echo $translations['title'] ." <p>cтудент: " . $row['name'] . " </p>"?></h1>
-        <nav>
-            <a href="student.php#viewSchedule"><?php echo $translations['view_schedule']; ?></a>
-            <a href="student.php#viewGrades"><?php echo $translations['view_grades']; ?></a>
-            <a href="logout.php"><?php echo $translations['logout']; ?></a>
-            <a href="">
-                <ul class="lang">
-                    <li>
-                        <?php echo 'Язык: ' . $lang; ?>
-                        <ul>
-                        <a href="?lang=ru"><li>Русский</li></a>
-                        <a href="?lang=kk"><li>Казахский</li></a>
-                        </ul>
-                    </li>
-                </ul>
-            </a>
-
-        </nav>
-    </header>
+    <?php include "header.php"?>
 
     <main>
         
@@ -102,10 +83,10 @@ $connection->close();
         
     </main>
 
-    <footer>
-        <p>&copy; 2024 <?php echo $translations['title']; ?></p>
-    </footer>
+    <?php include "footer.html"?>
 
     <script src="app.js"></script>
 </body>
 </html>
+
+
